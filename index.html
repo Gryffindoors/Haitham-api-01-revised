@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitta Funky</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oi&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/all.min.css">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-nav position-sticky top-0 z-3">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="#"><img src="./Images/Logo.webp" alt="Hitta Funky Logo" class="logo rounded-3"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="https://vercel.com/haitham-fowatys-projects" target="_blank">Other Projects</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
+                  Categories
+                </a>
+                <ul class="dropdown-menu" id="categories">
+                </ul>
+              </li>
+          </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <h1 class="oi-regular my-5 text-center text-uppercase store">Hitta Funky</h1>
+    </div>
+    <section class="container-fluid" id="featured">
+        <div id="featuredProduct" class="w-50 mx-auto position-relative d-flex">
+            <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="main product" class="main-product ms-auto rounded-5">
+            <div class="position-absolute">
+                <p class="tangerine-bold">Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="container-fluid my-5">
+        <h2 class="category my-5 text-center text-uppercase" id="categoryTitle"></h2>
+        <div class="row" id="singleProduct">
+        </div>
+    </section>
+
+    <script src="./Js/all.min.js"></script>
+    <script src="./Js/bootstrap.bundle.min.js"></script>
+    <script src="./Js/custom.js"></script>
+</body>
+</html>
