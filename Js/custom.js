@@ -175,7 +175,32 @@ function addToCart(productId, productTitle, productPrice) {
     }
     saveToLocalStorage('cart', cart);
     updateCartBadge();
-    alert('Product added to cart!');
+    showToast('Product added to cart successfully!');
+}
+
+// Function to display a toast
+function showToast(message) {
+    const toastContainer = document.createElement('div');
+    toastContainer.classList.add('toast', 'align-items-center', 'text-bg-success', 'border-0', 'position-fixed', 'bottom-0', 'end-0', 'm-3');
+    toastContainer.style.zIndex = '1050';
+
+    toastContainer.innerHTML = `
+        <div class="d-flex">
+            <div class="toast-body">
+                ${message}
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    `;
+
+    document.body.appendChild(toastContainer);
+
+    const toast = new bootstrap.Toast(toastContainer);
+    toast.show();
+
+    toastContainer.addEventListener('hidden.bs.toast', () => {
+        document.body.removeChild(toastContainer);
+    });
 }
 
 // Initialize the main page
