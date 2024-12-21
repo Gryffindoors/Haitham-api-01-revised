@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-nav position-sticky top-0 z-3">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg bg-nav position-sticky top-0 z-3 mb-3">
+        <div class="container-fluid px-5">
           <a class="navbar-brand text-light" href="#"><img src="./Images/Logo.webp" alt="Hitta Funky Logo" class="logo rounded-3"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
               </li>
@@ -33,26 +33,47 @@
                 <ul class="dropdown-menu" id="categories">
                 </ul>
               </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#"><i class="fa-solid fa-cart-shopping"></i><span class="badge text-bg-danger p-1">0</span></a>
+              </li>
           </div>
         </div>
     </nav>
-    <div class="container-fluid">
-        <h1 class="oi-regular my-5 text-center text-uppercase store">Hitta Funky</h1>
-    </div>
+    <div class="container-fluid d-flex flex-column flex-md-row align-items-center mt-3">
+      <!-- Title Section -->
+      <div class="flex-grow-1 d-flex justify-content-center align-items-center mb-3 mb-md-0">
+          <h1 class="oi-regular text-center text-uppercase store m-0">Hitta Funky</h1>
+      </div>
+      <!-- Image Section -->
+      <div class="flex-grow-1 d-flex justify-content-center align-items-center">
+          <img src="./Images/Logo.webp" alt="Hitta Funky Logo" class="img-logo">
+      </div>
+  </div>
+  
+  
     <section class="container-fluid" id="featured">
-        <div id="featuredProduct" class="w-50 mx-auto position-relative d-flex">
-            <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="main product" class="main-product ms-auto rounded-5">
-            <div class="position-absolute">
-                <p class="tangerine-bold">Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</p>
-            </div>
-        </div>
-    </section>
+      <h1 class="text-center">Featured Products</h1>
+      <div id="carouselFeaturedProducts" class="carousel slide w-50 mx-auto" data-bs-ride="carousel">
+          <div class="carousel-inner" id="featuredProductCarousel">
+              <!-- Dynamically populated items go here -->
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselFeaturedProducts" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselFeaturedProducts" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+  </section>
 
     <section id="products" class="container-fluid my-5">
         <h2 class="category my-5 text-center text-uppercase" id="categoryTitle"></h2>
         <div class="row" id="singleProduct">
         </div>
     </section>
+
 
     <script src="./Js/all.min.js"></script>
     <script src="./Js/bootstrap.bundle.min.js"></script>

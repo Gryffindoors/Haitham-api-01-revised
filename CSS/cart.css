@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal scroll issues */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 10%; /* Adjusted to center the image vertically */
+    left: 10%; /* Adjusted to center the image horizontally */
+    width: 80%; /* Set width to 80% of the viewport */
+    height: 80%; /* Set height to 80% of the viewport */
+    background-image: url('./../Images/Logo.webp'); /* Replace with your image path */
+    background-size: contain; /* Ensure the image scales without cropping */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    background-position: center; /* Ensure the image is centered */
+    background-attachment: fixed; /* Keep the image fixed on scroll */
+    filter: blur(2px); /* Adjust the blur intensity */
+    z-index: -1; /* Place it behind the content */
+}
+
+
+#cartContainer {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for content */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+}
+
+h1, h3, .btn {
+    position: relative; /* Ensure these elements stay unaffected */
+    z-index: 1;
+}
+/* Ensure parent container has no background */
+#cartContainer {
+    background-color: transparent; /* No background for the container */
+    padding: 20px;
+}
+
+/* Remove default card borders and shadows */
+.card {
+    background-color: rgba(255, 255, 255, 0.393); 
+}
+
+/* Add a subtle shadow to the card for depth */
+.card.shadow {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Ensure card content looks good */
+.card-title, .card-text {
+    color: #000; /* Ensure text is visible on a transparent background */
+}
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/cart.css">
+</head>
+<body>
+    
+    <div class="container my-5">
+        <h1 class="text-center mb-5">Your Shopping Cart</h1>
+        <div id="cartContainer" class="row">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="text-center mt-5">
+            <h3>Total: $<span id="cartTotal">0.00</span></h3>
+            <button class="btn btn-success mt-3">Proceed to Checkout</button>
+        </div>
+    </div>
+    <script src="./Js/bootstrap.bundle.min.js"></script>
+    <script src="./Js/cart.js"></script>
+</body>
+</html>
