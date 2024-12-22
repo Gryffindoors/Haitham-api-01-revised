@@ -20,7 +20,7 @@ function updateCartBadge() {
 
 // Get product ID from URL parameters
 const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get('id');
+const productId = parseInt(urlParams.get('id'), 10); // Ensure productId is a number
 
 // Render product details
 function renderProductDetails() {
@@ -48,24 +48,35 @@ function renderProductDetails() {
 
             // Add event listener to "Add to Cart" button
             document.getElementById('addToCart').addEventListener('click', () => {
-                const quantity = parseInt(document.getElementById('quantity').value, 10);
+                const quantityInput = document.getElementById('quantity');
+                const quantity = parseInt(quantityInput.value, 10);
+
+                if (isNaN(quantity) || quantity <= 0) {
+                    alert('Please enter a valid quantity greater than 0.');
+                    return;
+                }
+
                 addToCart(product.id, product.title, product.price, quantity);
             });
-        });
+        })
+        .catch(error => console.error('Error fetching product details:', error));
 }
 
 // Add product to cart
 function addToCart(productId, productTitle, productPrice, quantity) {
     let cart = getFromLocalStorage('cart');
+    productId = parseInt(productId, 10); // Ensure ID is a number
+
     const existingProduct = cart.find(item => item.id === productId);
     if (existingProduct) {
         existingProduct.quantity += quantity;
     } else {
         cart.push({ id: productId, title: productTitle, price: productPrice, quantity });
     }
+
     saveToLocalStorage('cart', cart);
     updateCartBadge();
-    showToast("Product added to cart successfully!");
+    showToast('Product added to cart successfully!');
 }
 
 // Function to display a toast
